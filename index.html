@@ -13,7 +13,6 @@
     <link href="lib/hover/hover.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/responsive.css" rel="stylesheet">
-    <link rel="shortcut icon" href="img/favicon.png">
 
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/jquery/jquery-migrate.min.js"></script>
@@ -23,13 +22,24 @@
     <script src="lib/magnific-popup/magnific-popup.min.js"></script>
     <script src="lib/isotope/isotope.pkgd.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        const api_url="https://favqs.com/api/qotd";
+        async function getQuote() {
+            const response = await fetch(api_url);
+            const data = await response.json();
+            return data.quote.body;
+        }
+        document.getElementById("quote").innerHTML =  await getQuote();
+    </script>
 </head>
 <body>
 <div id="header" class="home">
     <div class="container">
         <ul class="header-content">
             <h1>I'm <span class="typed"></span></h1>
-            <p> robotics engineer, java programmer, developer</p>
+            <p>robotics engineer, java programmer, developer</p>
+            <p>My motto is </p>
+            <p id="gayshit"></p>
             <ul class="list-unstyled list-social">
                 <li><a href="https://github.com/Fliegende-Rehe" target="_blank"><i class="ion-social-github"></i></a></li>
                 <li><a href="https://www.reddit.com/user/Fliegende-Rehe" target="_blank"><i class="ion-social-reddit"></i></a></li>
