@@ -27,9 +27,9 @@
         async function getQuote() {
             const response = await fetch(api_url);
             const data = await response.json();
-            return data.quote.body;
+            document.getElementById("moto").innerHTML = data.quote.body;
         }
-        document.getElementById("quote").innerHTML =  await getQuote();
+        getQuote();
     </script>
 </head>
 <body>
@@ -38,8 +38,7 @@
         <ul class="header-content">
             <h1>I'm <span class="typed"></span></h1>
             <p>robotics engineer, java programmer, developer</p>
-            <p>My motto is </p>
-            <p id="gayshit"></p>
+            <p>My motto is <span id="moto"></span></p>
             <ul class="list-unstyled list-social">
                 <li><a href="https://github.com/Fliegende-Rehe" target="_blank"><i class="ion-social-github"></i></a></li>
                 <li><a href="https://www.reddit.com/user/Fliegende-Rehe" target="_blank"><i class="ion-social-reddit"></i></a></li>
